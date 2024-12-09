@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-#![feature(test)]
+#![cfg_attr(feature = "bench", feature(test))]
 
 use std::io::{ErrorKind, Read, Write};
 use std::{io, mem};

@@ -1,5 +1,3 @@
-extern crate test;
-
 use std::io::{Cursor, Seek, SeekFrom};
 use byteorder::{LittleEndian, ReadBytesExt};
 use crate::dataset::tag::Tag;
@@ -186,8 +184,10 @@ impl PixelDataProcessor {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(feature = "bench", test))]
 mod tests {
+    extern crate test;
+
     use super::*;
     use test::Bencher;
 
