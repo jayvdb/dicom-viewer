@@ -204,8 +204,7 @@ mod tests {
         bench.iter(|| {
             let chunks = data.chunks(BYTES_PER_PIXEL);
 
-            chunks.map(|chunk| processor.get_pixel_value(chunk, BYTES_PER_PIXEL, PIXEL_REPRESENTATION))
-                  .fold(0.0, |acc, x| acc + x)
+            chunks.map(|chunk| processor.get_jpeg_encoded_data(chunk))
         });
     }
 }
